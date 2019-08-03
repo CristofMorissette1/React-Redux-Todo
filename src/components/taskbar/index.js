@@ -1,4 +1,4 @@
-import react, { component } from 'react'
+import React, { Component } from 'react'
 
 class TaskBar extends Component{
 
