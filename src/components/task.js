@@ -1,5 +1,7 @@
-import react, {component} from 'react';
-import { connect } from 'net';
+import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import {deleteTask} from '../actions/'
 
 class Task extends Component {
 
@@ -11,7 +13,7 @@ class Task extends Component {
                     {this.props.tasks}
                 </td>
                 <td>
-                    <button>Delete</button>
+                    <button onClick={() => {this.props.deleteTask(this.props.id)}}>Delete</button>
                 </td>
             </tr>
         )
@@ -19,7 +21,7 @@ class Task extends Component {
 }
 
 function mapDispatchToProps(dispatch){
-    r
+    return bindActionCreators({deleteTask}, dispatch)
 }
 
-export default connect(() => {}, mapDispatchToProps)(Task)
+export default connect(() =>{return {}}, mapDispatchToProps)(Task)
