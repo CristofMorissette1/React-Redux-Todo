@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import {connect} from 'react-redux';
+import Task from '../task'
 
 class TaskList extends Component {
     render(){
@@ -11,11 +13,22 @@ class TaskList extends Component {
                     </tr>
                 </thead>
                 <tbody>
-
+                    {this.props.tasks.map(task => {
+                        console.log(task)
+                        return(
+                            <Task>{task}</Task>
+                        )
+                    })}
                 </tbody>
             </table>
         )
     }
 }
 
-export default TaskList
+function mapStateToProps(state){
+    return{
+    tasks: state.tasks  
+    }
+}
+
+export default connect(mapStateToProps)(TaskList)

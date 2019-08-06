@@ -1,14 +1,13 @@
-addTask = (task) => {
+export const addTask = (task) => {
     return{
         type: "ADD_TASK",
         payload: task
     }
-},
-deleteTask = (taskId)=> {
+}
+export const deleteTask = (taskId)=> {
     return{
-        type: DELETE_TASK,
+        type: "DELETE_TASK",
         payload: taskId
     }
 }
 
-export default {addTask, deleteTask};

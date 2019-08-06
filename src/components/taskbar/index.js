@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {addTask} from '../../actions';
+import {addTask} from '../../actions/';
 
 
 class TaskBar extends Component{
@@ -21,4 +21,4 @@ function mapDispatchToProps(dispatch){
     return bindActionCreators({addTask}, dispatch)
 }
 
-export default connect(() => {},mapDispatchToProps)(TaskBar)
+export default connect(() =>{return {}},mapDispatchToProps)(TaskBar)
