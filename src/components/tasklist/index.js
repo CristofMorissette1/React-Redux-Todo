@@ -16,7 +16,7 @@ class TaskList extends Component {
                     {this.props.tasks.map(task => {
                         console.log(task)
                         return(
-                            <Task>{task}</Task>
+                            <Task>{task}</Task>    
                         )
                     })}
                 </tbody>
